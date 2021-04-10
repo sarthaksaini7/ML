@@ -25,7 +25,7 @@ y_prob = clf.predict_proba(x_new)
 plt.plot(x_new, y_prob[:, 1], "g-", label="virginica")
 plt.show()
 
-
+# print(y_prob)
 # print(x_new)
 # print(x)
 # print(y)
