@@ -5,6 +5,8 @@
 from sklearn import datasets
 import numpy as np
 from sklearn.linear_model import LogisticRegression
+import matplotlib.pyplot as plt
+
 iris = datasets.load_iris()
 x = iris["data"][:, 3:]
 # calculate if a flower is iris virginica or not
@@ -19,9 +21,12 @@ print(example)
 
 # Using matplotlib to plot the visualisation
 x_new = np.linspace(0, 3, 1000).reshape(-1, 1)
-print(x_new)
+y_prob = clf.predict_proba(x_new)
+plt.plot(x_new, y_prob[:, 1], "g-", label="virginica")
+plt.show()
 
 
+# print(x_new)
 # print(x)
 # print(y)
 # print(list(iris.keys()))
